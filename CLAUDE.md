@@ -48,7 +48,7 @@ localmente, a planilha é a fonte de verdade.
    invente dados: publique o painel com um aviso claro do problema em vez de números incorretos.
 
 ## Artifact URL
-(ainda não criado — a primeira execução preenche esta linha)
+https://claude.ai/code/artifact/e2f74d43-1458-428d-8b00-30e2f7a150e0
 
 ## Regras rígidas
 - Nunca invente números, itens ou percentuais que não estejam nos dados dos CSVs.
