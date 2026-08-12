@@ -1,7 +1,7 @@
 # RDO
 
-Painel automático de textos de obra (RDO / e-mail diretoria / e-mail projetistas / WhatsApp
-diretoria / WhatsApp projetistas), gerado por uma rotina agendada na nuvem (Claude Code) a partir
+Painel automático de textos de obra (RDO / e-mail diretoria / WhatsApp diretoria), gerado por uma
+rotina agendada na nuvem (Claude Code) a partir
 da planilha de avanço da obra — sem custo de API paga.
 
 - `CLAUDE.md` — instruções da rotina automática (onde ler os dados, o que gerar, onde publicar).

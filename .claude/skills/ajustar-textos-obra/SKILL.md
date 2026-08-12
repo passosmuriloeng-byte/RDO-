@@ -65,12 +65,12 @@ Exemplo de saída RDO:
 `Baldrame: executados 30 m no dia, totalizando 369 m de 727,38 m previstos (51% de avanço).`
 
 ### E-mail para diretoria
-- Tom formal/executivo, direto ao ponto
+- Tom formal/executivo, mas **fluido e natural** — frases completas, não telegráfico
 - Abre com o resultado principal (avanço geral, % do prazo, se está dentro do cronograma)
-- Detalhes técnicos resumidos — diretoria quer impacto (prazo, custo, decisão necessária), não
-  jargão de execução
-- Se houver atraso ou risco, destaque isso e, se souber, a ação/decisão necessária
-- Saudação e fechamento profissionais, mas enxutos
+- Segue a mesma estrutura completa do WhatsApp para diretoria (ver abaixo): todos os itens
+  executados por frente, ocorrências, efetivo, pendências de pagamento/orçamento — só que em
+  parágrafos/formatação de e-mail em vez de linhas curtas
+- Saudação e fechamento profissionais
 
 ### E-mail para projetistas
 - Tom técnico, pode manter jargão de engenharia/obra e detalhes de execução
@@ -79,13 +79,59 @@ Exemplo de saída RDO:
 - Saudação e fechamento profissionais, mais direto que o e-mail de diretoria
 
 ### WhatsApp para diretoria
-- Curto, direto, só os números/fatos que importam para quem decide
-- Tom profissional mas conversacional — sem saudação longa nem assinatura formal
-- Sem jargão técnico desnecessário
+Formato de referência confirmado pelo usuário (2026-08-11) — siga esta estrutura, não resuma:
+
+```
+Bom dia,
+Avanço de atividades DD/MM.
+
+<Nome da frente>.
+Avanço geral: X%
+Avanço diário: Y%.
+Atividades executadas:
+<Item>: Dia X un | Acum. Y de Z un | Avanço W%
+<Item>: Dia X un | Acum. Y de Z un | Avanço W%
+[um item por linha, TODOS os itens da frente que tiveram execução no dia — não corte nenhum]
+
+[repetir bloco acima para cada frente com avanço no dia]
+
+Ocorrências:
+<texto corrido, factual, uma ocorrência por parágrafo se houver mais de uma>
+
+Efetivo
+<quantidade> <função>
+<quantidade> <função>
+[um por linha, agrupado por função — ex.: "1 Coordenador", "2 Montadores"]
+
+Link de solicitações de pagamentos e orçamentos abertos aguardando aprovação, comentários ou
+trocas.
+<descrição curta>: <link>
+<descrição curta>: <link>
+```
+
+- Linguagem **fluida e natural**, frases completas — não é lista telegráfica de palavras soltas
+- **Nunca usar linguagem que comprometa ou assuma responsabilidade** — este é um relato factual,
+  não uma admissão. Regras concretas:
+  - Descreva o que aconteceu, não de quem é a culpa, a menos que o usuário tenha dito
+    explicitamente. "Atividades paralisadas por precipitação pluviométrica" é factual; "atrasamos
+    por falha nossa" é uma admissão — nunca escreva isso a menos que o usuário mande literalmente.
+  - Nunca prometa prazo, data de conclusão ou solução que o usuário não confirmou. Se o dado vem
+    de "previsão de conclusão" da planilha, apresente como estimativa ("previsão pelo ritmo
+    atual"), não como compromisso ("vamos entregar até").
+  - Nunca use "garantimos", "certamente", "com certeza vamos resolver" ou equivalentes.
+- "Avanço geral" e "Avanço diário" (a contribuição do dia no % da frente) só entram se a planilha
+  tiver o número — nunca calcule você mesmo um "Avanço diário" a partir de peso inventado (ver
+  CLAUDE.md sobre as fórmulas quebradas em 3.1/3.3). Se não der para calcular, omita a linha em vez
+  de estimar.
+- "Efetivo" vem da aba MaoDeObra do dia (ver CLAUDE.md) — conte quantos "Presente" por função. Se
+  não houver lançamento de mão de obra no dia, omita essa seção inteira (não escreva "0 pessoas").
+- A seção de pagamentos/orçamentos só entra se houver uma fonte configurada (ver CLAUDE.md) — sem
+  fonte, omita a seção em vez de inventar itens.
 
 ### WhatsApp para projetistas
 - Curto, direto, pode ser técnico
 - Tom profissional-informal, sem saudação longa
+- Mesma regra de não se comprometer do WhatsApp para diretoria
 
 ## Passo 4 — Confirmar antes de finalizar (quando fizer sentido)
 
