@@ -165,20 +165,34 @@ a nova data.
    não estejam nas planilhas/documentos/conectores configurados. Nunca escreva linguagem que assuma
    culpa ou prometa prazo não confirmado pelo usuário — ver regras em SKILL.md.
 
-   **Pendências de pagamento/orçamento (ClickUp) — bloqueado em 11/08/2026:** o usuário pediu para
-   incluir uma seção com links de tarefas de pagamento/orçamento pendentes de aprovação (exemplo:
-   `https://app.clickup.com/t/3125581/<taskId>`), mas o conector ClickUp MCP disponível está
-   conectado a um workspace diferente (space "OBRAS" > pasta "UFV PARACAMBI Pedências", workspace
-   root `9007056000`) do workspace onde essas tarefas realmente ficam (team `3125581` — tentativa de
-   leitura direta deu "Team not authorized"). Não invente essa seção nem tente adivinhar a pasta
-   certa — só adicione a seção de pagamentos quando o usuário confirmar que reconectou o ClickUp ao
-   workspace certo e informar qual pasta/lista usar; até lá, omita a seção inteira.
+   **Pendências de pagamento/orçamento dentro dos textos prontos (WhatsApp/e-mail diretoria) —
+   ainda bloqueado (desde 11/08/2026):** o usuário pediu para incluir, especificamente na seção
+   "Link de solicitações de pagamentos e orçamentos" do modelo de WhatsApp/e-mail (ver SKILL.md),
+   links de tarefas de pagamento/orçamento no formato `https://app.clickup.com/t/3125581/<taskId>`
+   (team `3125581`) — essa leitura direta ainda dá "Team not authorized" e continua bloqueada. Não
+   invente essa seção nos textos prontos; só adicione quando o usuário confirmar acesso a esse
+   workspace específico e informar a pasta/lista certa.
+
+   **Card "Pendências" do painel (ClickUp) — habilitado em 15/08/2026, a pedido do usuário:**
+   diferente do bloqueio acima, o card do painel mostra as tarefas pendentes de um workspace
+   ClickUp diferente (esse sim acessível pelo conector): workspace root `9007056000` > espaço
+   "OBRAS" > pasta "UFV PARACAMBI Pedências" > lista "RLJ 2 SIM 2" (list id `901702970249`). A
+   cada execução, busque as tarefas dessa lista (`clickup_filter_tasks` com `list_ids:
+   ["901702970249"]`, `include_closed: false`) e monte o card agrupando por status, **excluindo
+   as com status "ok"** (concluídas). Para cada tarefa mostre: nome (linkado para a URL da
+   tarefa), responsável (se houver assignee) e prazo (se houver `due_date`) — marque prazos já
+   vencidos (comparando com a data de hoje) com destaque visual (ex.: pill de aviso "venceu
+   DD/MM"). Isso é uma lista geral de pendências operacionais (compras, manutenção, aprovações
+   etc.), não só pagamento/orçamento — não filtre por palavra-chave, mostre todas as não
+   concluídas. Se a leitura desse workspace/lista falhar, não invente tarefas: mostre um aviso
+   claro no card em vez da lista.
 5. Publique/atualize o Artifact com: aviso de "RDO não preenchido" se aplicável (ver regra acima),
    cards "Registrar ocorrência" / "Mão de obra" / "Equipamentos" / "Condição climática" (mantenha os
    formulários e o script como estão — não remova nem regenere esses blocos, só ajuste os dados ao
-   redor deles), card de status geral da EAP, as frentes com avanço (ordenadas), as frentes sem
-   avanço (marcadas), e os 3 textos prontos (RDO, e-mail diretoria, WhatsApp diretoria) — incluindo o
-   resumo de mão de obra/equipamentos/clima no RDO.
+   redor deles), card de status geral da EAP, card de "Pendências" do ClickUp (ver acima), as
+   frentes com avanço (ordenadas), as frentes sem avanço (marcadas), e os 3 textos prontos (RDO,
+   e-mail diretoria, WhatsApp diretoria) — incluindo o resumo de mão de obra/equipamentos/clima no
+   RDO.
    - Se este arquivo já tiver uma "Artifact URL" registrada na seção abaixo, **atualize essa mesma
      URL** (não crie uma nova).
    - Ao chamar a ferramenta de Artifact, **omita o parâmetro `capabilities`** num redeploy normal —
